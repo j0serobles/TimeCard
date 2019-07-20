@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Time Sheet</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+crossorigin="anonymous">
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Bootstrap CDN-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase References -->
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+
+</head>
+
+<body>
+ <div class="container">
+   <div class="jumbotron text-center">
+   <h1>Employee Data Management</h1>
+   <h2>A Comprehensive Directory of Employee Billable Hours</h2>
+     </div>
+       <div class="row">
+       <div class="col">
+       <div class="card">
+       <div class="card-header">
+       <p>Current Employees</p>
+     </div>
+     <div class="card-body">
+       <table class="table">
+       <thead>
+         <tr>
+           <th scope="col">Employee Name</th>
+           <th scope="col">Role</th>
+           <th scope="col">Start Date</th>
+           <th scope="col">Months Worked</th>
+           <th scope="col">Monthly Rate($)</th>
+           <th scope="col">Total Billed($)</th>
+         </tr>
+         </thead>
+         <tbody id='emp-table'>
+         
+        <!-- Employee Data goes here  -->
+           
+         </tbody>
+         </table>
+       </div>
+     </div>
+   </div>
+ </div>
+   <div class="row">
+     <div class="col">
+       <div class="card">
+         <div class="card-header">
+          <p>Employee Details</p>
+         </div>
+         <div class="card-body">
+           <form>
+             <div class="form-group">
+               <label for="employee-name">Employee Name</label>
+               <input type="text" class="form-control" id="employee-name" aria-describedby="nameHelp" placeholder="Employee Name">
+               <small id="nameHelp" class="form-text text-muted">The Employee's full name.</small>
+             </div>
+             <div class="form-group">
+               <label for="employee-role">Role</label>
+               <input type="text" class="form-control" id="employee-role" placeholder="Role">
+             </div>
+             <div class="form-group">
+                <label for="employee-start">Start Date</label>
+                <input type="text" class="form-control" id="employee-start" aria-describedby="startHelp" placeholder="Enter Start Date">
+                <small id="startHelp" class="form-text text-muted">The date the employee started working with the company.</small>
+              </div>
+             <div class="form-group">
+                <label for="employee-rate">Billing Rate</label>
+                <input type="text" class="form-control" id="employee-rate" aria-describedby="rateHelp" placeholder="Employee's Billing Rate">
+                <small id="rateHelp" class="form-text text-muted">How much money the employee bills per hour.</small>
+              </div>
+              <div class="form-group">
+                <label for="employee-billed">Total Billed</label>
+                <input type="text" class="form-control" id="employee-billed" aria-describedby="billedHelp" placeholder="Total Amount Billed so far.">
+                <small id="billedHelp" class="form-text text-muted">How much has the employee billed so far</small>
+              </div>
+               <button id='submit-employee' type="submit" class="btn btn-primary">Submit</button>
+           </form>
+         </div>
+       </div>
+     </div>
+     </div>
+   </div>
+ </div>
+
+ <script src='assets/javascript/logic.js'></script>
+</body>
+</html>
