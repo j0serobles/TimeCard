@@ -24,6 +24,7 @@ var config = {
   var employeeStartDate = "";
   var employeeMonthlyRate = 0.0;
   var employeeTotalBilled = 0.0; 
+  $( "#employee-start" ).datepicker();
   
   // --------------------------------------------------------------
   
@@ -44,7 +45,8 @@ var config = {
     var tdName = $("<td>").text(snapshot.val().empName); 
     var tdRole = $("<td>").text(snapshot.val().empRole); 
     var tdStart = $("<td>").text(snapshot.val().empStartDate); 
-    var tdMonths = $("<td>"). text(""); 
+    var monthsWorked = moment().diff( moment( snapshot.val().empStartDate,"MM/DD/YYYY" ), 'months'); 
+    var tdMonths = $("<td>").text(monthsWorked); 
     var tdRate = $("<td>").text(snapshot.val().empMonthlyRate); 
     var tdBilled = $("<td>").text(snapshot.val().empBilled); 
 
